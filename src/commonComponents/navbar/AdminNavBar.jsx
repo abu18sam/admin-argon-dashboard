@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useHistory } from "react-router";
 // import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -20,6 +21,14 @@ import {
 } from "reactstrap";
 
 const AdminNavbar = (props) => {
+
+  const history = useHistory();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    history.replace('/');
+  }
+  
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -35,10 +44,10 @@ const AdminNavbar = (props) => {
               <InputGroup className="input-group-alternative">
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>
-                    <i className="fas fa-search" />
+                    <i className="fa fa-search" style={{color:'blue'}}/>
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input placeholder="Search" type="text" />
+                <Input placeholder="Search" type="text" style={{color:'black'}}/>
               </InputGroup>
             </FormGroup>
           </Form>
@@ -66,32 +75,32 @@ const AdminNavbar = (props) => {
                 <DropdownItem className="noti-title" header tag="div">
                   <h6 className="text-overflow m-0">Welcome!</h6>
                 </DropdownItem>
-                <DropdownItem to="/admin/user-profile" 
+                <DropdownItem to="/admin/user-profile"
                 // tag={Link}
                 >
                   <i className="ni ni-single-02" />
                   <span>My profile</span>
                 </DropdownItem>
-                <DropdownItem to="/admin/user-profile" 
+                <DropdownItem to="/admin/user-profile"
                 // tag={Link}
                 >
                   <i className="ni ni-settings-gear-65" />
                   <span>Settings</span>
                 </DropdownItem>
-                <DropdownItem to="/admin/user-profile" 
+                <DropdownItem to="/admin/user-profile"
                 // tag={Link}
                 >
                   <i className="ni ni-calendar-grid-58" />
                   <span>Activity</span>
                 </DropdownItem>
-                <DropdownItem to="/admin/user-profile" 
+                <DropdownItem to="/admin/user-profile"
                 // tag={Link}
                 >
                   <i className="ni ni-support-16" />
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={handleLogout}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>

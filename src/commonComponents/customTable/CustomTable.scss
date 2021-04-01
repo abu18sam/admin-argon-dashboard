@@ -1,0 +1,50 @@
+.custom-table {
+    overflow: auto;
+
+    .tableDataItem {
+        margin: auto;
+        // padding: 0px;
+    }
+}
+
+.tableHeaderRow {
+    height:56px;    
+}
+
+.custom-table thead tr {
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+} 
+
+.custom-table tbody tr {
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+} 
+
+
+.tableHeaderItem {
+    // min-width:184px;
+    // width: 184px;
+    // max-width: 150;
+    word-break: break-all;
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 600;
+    font-size: 18px !important;
+    font-family: sans-serif;
+}
+
+.tableFiltersRow {
+    border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+}
+
+.tableDataItem{
+    // min-width:184px;    
+    word-break: break-all;
+    font-size: 14px;
+    color: black;
+    margin: auto;
+    max-width: 350px;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    // align-self: center;
+    // padding: 0.75rem;
+}

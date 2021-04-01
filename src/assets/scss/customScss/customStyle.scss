@@ -1,0 +1,40 @@
+.custom-checkbox .custom-control-input {
+    border: 2px solid $secondary;
+  }
+  
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    content: "✔";
+    color: #fff;
+    margin-top: -1px;
+    margin-left: 5px;
+    background-image: none !important;
+    /* margin-bottom: 0px; */
+  }
+
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    content: "✔";
+    color: #fff;
+    margin-top: -1px;
+    margin-left: 5px;
+    background-image: none !important;
+    
+  }
+  
+  .error {
+    border: 1px solid red;
+  }
+  
+  /********* loader css starts***********/
+  
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 9999;
+    background-color: #00000091;
+    top: 0;
+  }

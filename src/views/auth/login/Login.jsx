@@ -16,14 +16,14 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { ADMIN_ROUTES, AUTH_LAYOUT, FORGOT_PASSWORD, SIGN_UP } from "../../../constants/RouterConstants";
+import { ADMIN_ROUTES, ADMIN_LAYOUT, DASHBOARD, AUTH_LAYOUT, FORGOT_PASSWORD, SIGN_UP } from "../../../constants/RouterConstants";
 
 const Login = () => {
 
   const history = useHistory();
 
   const handleSignInClick = () => {
-    history.replace(`${ADMIN_ROUTES.DASHBOARD}`);
+    history.replace(`${ADMIN_LAYOUT}${DASHBOARD}`);
   }
 
   return (
@@ -104,19 +104,20 @@ const Login = () => {
                   />
                 </InputGroup>
               </FormGroup>
-              <div className="custom-control custom-control-alternative custom-checkbox">
+              {/* <div className="custom-control custom-control-alternative custom-checkbox">
                 <input
                   className="custom-control-input"
                   id=" customCheckLogin"
                   type="checkbox"
+                  name="rememberMe"
                 />
                 <label
                   className="custom-control-label"
-                  htmlFor=" customCheckLogin"
+                  htmlFor="customCheckLogin"
                 >
                   <span className="text-muted">Remember me</span>
                 </label>
-              </div>
+              </div> */}
               <div className="text-center">
                 <Button className="my-4" color="primary" type="button" onClick={handleSignInClick}>
                   Sign in
@@ -130,18 +131,18 @@ const Login = () => {
             <Link
               // className="text-light"
               // href="#"
-                  to={`${AUTH_LAYOUT}${FORGOT_PASSWORD}`}
-              // onClick={(e) => e.preventDefault()}
+              to={`${AUTH_LAYOUT}${FORGOT_PASSWORD}`}
+            // onClick={(e) => e.preventDefault()}
             >
               <small>Forgot password?</small>
             </Link>
           </Col>
           <Col className="text-right" xs="6">
             <Link
-            to={`${AUTH_LAYOUT}${SIGN_UP}`}
-              // className="text-light"
-              // href="#"
-              // onClick={(e) => e.preventDefault()}
+              to={`${AUTH_LAYOUT}${SIGN_UP}`}
+            // className="text-light"
+            // href="#"
+            // onClick={(e) => e.preventDefault()}
             >
               <small>Create new account</small>
             </Link>

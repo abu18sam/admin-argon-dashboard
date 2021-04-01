@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import { Spinner } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 import Sidebar from '../../commonComponents/sidebar/Sidebar';
 import { ADMIN_ROUTES } from '../../constants/RouterConstants';
 import AdminNavbar from '../../commonComponents/navbar/AdminNavBar';
+import AdminRoutes from '../../views/admin/Routes';
 
-const Dashboard = React.lazy(() => import('../../views/admin/dashboard/Dashboard'));
-const UserListing = React.lazy(()=>import('../../views/admin/manageUsers/UserListing'));
+// const Dashboard = React.lazy(() => import('../../views/admin/dashboard/Dashboard'));
+// const UserListing = React.lazy(()=>import('../../views/admin/manageUsers/UserListing'));
 
 const AdminLayout = (props) => {
 
@@ -49,13 +50,14 @@ const AdminLayout = (props) => {
                     // brandText={getBrandText(props.location.pathname)}
                     brandText="HI"
                 />
-                <Suspense fallback={<Spinner />}>
+                <AdminRoutes />
+                {/* <Suspense fallback={<Spinner />}>
                     <Switch>
                         <Route exact path={ADMIN_ROUTES.DASHBOARD} component={Dashboard} />
                         <Route exact path={ADMIN_ROUTES.USER_LISTING} component={UserListing} />
                         <Redirect to={ADMIN_ROUTES.DASHBOARD} />
                     </Switch>
-                </Suspense>
+                </Suspense> */}
                 {/* <Container fluid>
                     <AdminFooter />
                 </Container> */}
